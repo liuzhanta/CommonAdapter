@@ -40,7 +40,6 @@ OK,我们需要优化的点如下:
 这里只贴出部分代码,详细代码请查看源码,并且使用SparseArray<View>来缓存访问过的视图,关于SparseArray如何提高访问效率,
 请参考 [http://stackoverflow.com/questions/25560629/sparsearray-vs-hashmap]()
     
-2.   **convertView**的缓存
 
 对于ItemView的缓存其实也是一个不断重复的过程,设计模式的思想是就是提取变化的部分,封装不变的部分。
 变的部分就是Item的布局以及视图的内容,那么就出现了下面的封装:
