@@ -21,7 +21,7 @@
 但是这段代码如果业务量多的话,就会导致getView方法中代码量也变得庞大,而且你的项目中可能出现多次,这样就会造成冗余,所以这样的方式实在不可取。
 OK,我们需要优化的点如下:
 
-1.   __ViewHolder__
+1.__ViewHolder__
     
 使用一个对象来缓存Item中的控件对象,然后通过View.setTag的方式来存储在视图上,实际上是为了增加访问效率,减少不必要的内存开销。
 然而这种方式还是会造成冗余代码的问题,于是在CommonAdapter中使用了一个ViewHolder的类来控制对View的操作,
@@ -40,7 +40,7 @@ OK,我们需要优化的点如下:
 这里只贴出部分代码,详细代码请查看源码,并且使用SparseArray<View>来缓存访问过的视图,关于SparseArray如何提高访问效率,
 请参考 [http://stackoverflow.com/questions/25560629/sparsearray-vs-hashmap]()
     
-
+2.itemView缓存
 对于ItemView的缓存其实也是一个不断重复的过程,设计模式的思想是就是提取变化的部分,封装不变的部分。
 变的部分就是Item的布局以及视图的内容,那么就出现了下面的封装:
     
