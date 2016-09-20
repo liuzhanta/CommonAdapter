@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mlistview = (ListView) findViewById(R.id.listview);
 
         for (int i = 0; i < 30; i++) {
