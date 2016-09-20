@@ -71,11 +71,11 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public void appendData(List<T> data) {
-        if (mDatas != null) {
-            mDatas.addAll(data);
-        } else {
-            mDatas = data;
+        public void appendData(List<T> data) {
+            if (mDatas != null) {
+                mDatas.addAll(data);
+            } else {
+                mDatas = data;
         }
         notifyDataSetChanged();
     }
